@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Results summary component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    :root {
+      --pale-blue: hsla(221, 100%, 96%, 0.2);
+      --light-lavander: hsl(241, 100%, 89%);
+      --dark-gray-blue: hsl(224, 30%, 27%);
+      --dark-gray-blue-lighter: hsla(224, 30%, 27%, 0.5);
+      --white: hsl(0, 0%, 100%);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+
+      font-family: 'Hanken Grotesk', sans-serif;
+    }
+    
+    body {
+      background-color: var(--pale-blue);
+      height: 100vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background-color: white;
+      display: grid;
+      grid-template-columns: 300px 300px;
+      border-radius: 25px;
+      box-shadow: 0px 1px 5px hsla(241, 100%, 89%, 0.4);
+    }
+
+    .first-cell {
+      background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      padding: 40px 50px;
+
+      border-radius: 25px;
+    }
+
+    .result-title {
+      color: var(--light-lavander);
+    }
+
+    .result-points {
+      background: linear-gradient(hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
+      height: 150px;
+      width: 150px;
+      border-radius: 50%;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .result-points h2 {
+      font-size: 50px;
+    }
+
+    .result-points p {
+      color: var(--light-lavander);
+    }
+
+    .great {
+      font-size: 20px;
+    }
+
+    .text {
+      text-align: center;
+      color: var(--light-lavander);
+      font-size: 14px;
+    }
+
+    .second-cell {
+      display: flex;
+      flex-direction: column;
+
+      padding: 30px;
+      gap: 30px;
+    }
+
+    .summary {
+      font-size: 18px;
+      color: var(--dark-gray-blue);
+    }
+
+    .button {
+      text-align: center;
+      padding: 15px 0;
+      background-color: var(--dark-gray-blue);
+      color: var(--white);
+      border: 0;
+      border-radius: 50px;
+    }
+
+    .button:hover {
+      background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+      cursor: pointer;
+    }
+
+    .result-individual {
+      padding: 10px 15px;
+      border-radius: 10px;
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+
+      font-size: 14px;
+    }
+
+    .result-individual:last-child {
+      margin-bottom: 0px;
+    }
+
+    .red {
+      background-color: hsla(0, 100%, 67%, 0.08);
+      color: hsl(0, 100%, 67%);
+    }
+
+    .yellow {
+      background-color: hsla(39, 100%, 56%, 0.08);
+      color: hsl(39, 100%, 56%);
+    }
+
+    .green {
+      background-color: hsla(166, 100%, 37%, 0.08);
+      color: hsl(166, 100%, 37%);
+    }
+
+    .blue {
+      background-color: hsla(234, 85%, 45%, 0.08);
+      color: hsl(234, 85%, 45%);
+    }
+
+    .result-individual-points {
+      flex-basis: 100%;
+      text-align: right;
+      color: var(--dark-gray-blue);
+    }
+
+    .result-individual-points span {
+      color: var(--dark-gray-blue-lighter);
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        background-color: white;
+        display: block;
+      }
+
+      .first-cell {
+        border-radius: 0 0 20px 20px;
+      }
+
+      body {
+        height: auto;
+      }
+    }
+  </style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="first-cell">
+      <div class="result-title">Your Result</div>
+      <div class="result-points">
+        <h2>76</h2> 
+        <p>of 100</p>
+      </div>
+      <div class="great">Great</div>
+      <div class="text">You scored higher than 65% of the people who have taken these tests.</div>
+    </div>
+
+    <div class="second-cell">
+      <div class="summary">Summary</div>
+      <div>
+        <div class="result-individual red">
+          <img src="./assets/images/icon-reaction.svg" alt="">
+          <p class="result-individual-label">Reaction</p>
+          <p class="result-individual-points">80 <span>/ 100</span></p>
+        </div>
+        <div class="result-individual yellow">
+          <img src="./assets/images/icon-memory.svg" alt="">
+          <p class="result-individual-label">Memory</p>
+          <p class="result-individual-points">92 <span>/ 100</span></p>
+        </div>
+        <div class="result-individual green">
+          <img src="./assets/images/icon-verbal.svg" alt="">
+          <p class="result-individual-label">Verbal</p>
+          <p class="result-individual-points">61 <span>/ 100</span></p>
+        </div>
+        <div class="result-individual blue">
+          <img src="./assets/images/icon-visual.svg" alt="">
+          <p class="result-individual-label">Visual</p>
+          <p class="result-individual-points">72 <span>/ 100</span></p>
+        </div>
+      </div>
+      <button type="button" class="button">Continue</button>
+    </div>
+  </div>
+</body>
+</html>
